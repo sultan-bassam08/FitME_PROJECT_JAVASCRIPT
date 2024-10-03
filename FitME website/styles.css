@@ -63,43 +63,6 @@
   background-color: var(--primary-color-dark);
 }
 
-.btn-user {
-  padding: 0.75rem 1.5rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  color: var(--white);
-  background-color: var(--primary-color);
-  border-radius: 50px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-user:hover {
-  color: rgb(81, 81, 81);
-  background-color:white;
-  border: 1.5px solid var(--primary-color) ;}
-
-.btn-user2 {
-  padding: 0.75rem 1.5rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  color: rgb(81, 81, 81);
-  background-color:white;
-  border: 1.5px solid var(--primary-color) ;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-user2:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-
 img {
   display: flex;
   width: 100%;
@@ -139,10 +102,20 @@ nav {
   background-color: var(--secondary-color);
 }
 
-.nav__logo a {
+.nav__logo
+{
+  display: flex;
+}
+.nav__logo p
+{
+   padding-right: 8px;
+}
+
+
+.nav__logo a, p {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  font-style: italic;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-dark);
@@ -181,51 +154,6 @@ nav {
 
 .link a:hover {
   color: var(--primary-color);
-}
-/* Styles for the notification icon */
-.notification {
-  position: relative;
-  margin-right: 20px;
-  font-size: 1.5rem; /* Adjust size of the bell icon */
-  color: #333;
-}
-
-.notification .badge {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  background-color: red;
-  color: white;
-  padding: 3px 6px;
-  border-radius: 50%;
-  font-size: 0.7rem;
-}
-
-/* Styles for the profile circle */
-.profile-circle img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ccc;
-}
-
-.profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Align the icons on the top right of the nav bar */
-.nav__links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.profile-container a {
-  text-decoration: none;
-  margin-left: 15px;
 }
 
 .nav__menu__btn {

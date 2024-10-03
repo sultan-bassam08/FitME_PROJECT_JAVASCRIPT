@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        form {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        div {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+        button:not(:disabled):hover {
+            background-color: #0056b3;
+        }
+        #successMessage {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm">
+        <div>
+            <label for="username">Username: </label>
+            <input type="text" id="username">
+            <span class="error" id="usernameError"></span>
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <div style="position: relative;">
+                <input type="password" id="password">
+                <span class="toggle-password" id="togglePassword">👁️</span>
+            </div>
+            <span class="error" id="passwordError"></span>
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password: </label>
+            <div style="position: relative;">
+                <input type="password" id="confirmPassword">
+                <span class="toggle-password" id="toggleConfirmPassword">👁️</span>
+            </div>
+            <span class="error" id="confirmPasswordError"></span>
+        </div>
+        <div>
+            <button id="registerBtn" disabled>Register</button>
+        </div>
+        <p id="successMessage"></p>
+    </form>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const registerBtn = document.getElementById('registerBtn');
+        const successMessage = document.getElementById('successMessage');
+        const usernameError = document.getElementById('usernameError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const togglePassword = document.getElementById('togglePassword');
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+
+        function validateInput(input, errorField, message) {
+            if (input.value.trim() === '') {
+                errorField.textContent = message;
+                return false;
+            } else {
+                errorField.textContent = '';
+                return true;
+            }
+        }
+
+        function validatePasswordStrength() {
+            const password = passwordInput.value;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumbers = /\d/.test(password);
+            const hasSymbols = /[!@#$%^&*./]/.test(password);
+            const isLongEnough = password.length >= 8;
+
+            if (!hasUpperCase || !hasLowerCase || !hasNumbers || !hasSymbols || !isLongEnough) {
+                passwordError.textContent = "Password: min 8 chars, include upper/lowercase, numbers, symbols";
+                return false;
+            } else {
+                passwordError.textContent = '';
+                return true;
+            }
+        }
+
+        function validatePasswordMatch() {
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                confirmPasswordError.textContent = "Passwords do not match!";
+                return false;
+            } else {
+                confirmPasswordError.textContent = '';
+                return true;
+            }
+        }
+
+        function validateForm() {
+            const isUsernameValid = validateInput(usernameInput, usernameError, 'Username is required.');
+            const isPasswordValid = validatePasswordStrength();
+            const isConfirmPasswordValid = validateInput(confirmPasswordInput, confirmPasswordError, 'Confirm password is required.');
+            const isPasswordMatching = validatePasswordMatch();
+
+            registerBtn.disabled = !(isUsernameValid && isPasswordValid && isConfirmPasswordValid && isPasswordMatching);
+        }
+
+        usernameInput.addEventListener('input', validateForm);
+        passwordInput.addEventListener('input', validateForm);
+        confirmPasswordInput.addEventListener('input', validateForm);
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        });
+
+        toggleConfirmPassword.addEventListener('click', function () {
+            const type = confirmPasswordInput.type === 'password' ? 'text' : 'password';
+            confirmPasswordInput.type = type;
+            this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        });
+
+        registerBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const existingUser = users.find(user => user.username === username);
+            if (existingUser) {
+                usernameError.textContent = 'This username already exists!';
+                return;
+            } else {
+                usernameError.textContent = '';
+            }
+
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            successMessage.textContent = 'User registration successful!';
+            successMessage.style.color = 'green';
+        });
+
+        window.onload = function() {
+            const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+            if (storedUsers.length > 0) {
+                storedUsers.forEach(user => {
+                    console.log(`Username: ${user.username}`);
+                });
+            }
+        };
+    </script>
+</body>
+</html>

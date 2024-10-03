@@ -54,13 +54,15 @@
   white-space: nowrap;
   color: var(--white);
   background-color: var(--primary-color);
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background-color: var(--primary-color-dark);
+  color:var(--primary-color);
+  background-color:white;
+border: 1.5px solid var(--primary-color) ;
 }
 
 img {

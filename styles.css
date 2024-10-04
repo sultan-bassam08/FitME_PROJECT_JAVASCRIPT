@@ -102,7 +102,7 @@
 
 img {
   display: flex;
-  width: 100%;
+  
 }
 
 a {
@@ -859,9 +859,10 @@ nav {
   }
   
   /* Adjust Workout Cards */
-  .workout_card {
+  .workout_card, .diet_card {
     
     gap: 1rem; /* Space between the text, video, and content */
+   
     
     padding: 2rem;
     border-radius: 10px;
@@ -871,12 +872,12 @@ nav {
     grid-template-columns: repeat(2, 1fr);
     
   }
-  .workout-title {
+  .workout-title, .diet-title {
     text-align: center;
     font-size: 24px; /* Adjust size as needed */
     margin-bottom: 10px; /* Add space below the title */
   }
-  .workout-date
+  .workout-date, .diet-date
   {
     text-align: center;
   }
@@ -889,11 +890,15 @@ nav {
     margin-bottom: 1rem; /* Add space below the heading */
   }
   
-  .workout_vedio {
+  .workout_vedio, .diet_img {
     justify-self: center;
   }
+  .diet_img img{
+    display: flex;
+    max-width: 100%;
+  }
   
-  .workout_content {
+  .workout_content, .diet_content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -949,6 +954,93 @@ nav {
     background-color: rgb(53, 125, 75); /* Change hover effect */
   }
   /* End Of User workout  */
+
+/* User diet  */
+
+  .diet_img
+  {
+    width: 300px;
+    /* height: 200px; */
+  }
+  .btn-show-more {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+    border: 1.5px solid rgb(18, 90, 246);
+  }
+  /* Popup styling */
+  .popup {
+    display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Make sure popup is above other elements */
+  }
+
+  .popup-content {
+     /* border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;*/
+      flex-direction: column;
+      display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 500px; 
+     background-color: #fff;
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+     position: relative; /* Allows proper positioning of the close button */
+  }
+  /* Hide carousel buttons when popup is active */
+  /* .hide-carousel-btns .carousel-control-prev,
+  .hide-carousel-btns .carousel-control-next {
+    visibility: hidden; */
+
+  /* Close button styling */
+
+  .close-btn {
+    position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  }
+  .close-btn:hover {
+    color: red;
+  }
+/* Recipe image styling */
+.image img {
+ height: 200px;
+ width: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.popup-content h3 {
+  margin-top: 20px;
+}
+
+.popup-content p {
+  margin: 10px 0;
+  color: #555;
+}
+
+  /* End Of User diet  */
 
   .trainer__grid {
     grid-template-columns: repeat(3, 1fr);

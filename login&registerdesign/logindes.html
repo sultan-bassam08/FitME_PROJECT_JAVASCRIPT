@@ -19,12 +19,33 @@
             margin: 0;
             background-color: #f9f9f9;
         }
-        form {
-            width: 300px;
-            padding: 20px;
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
             background-color: white;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-section {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
+        .left-section img {
+            max-width: 70%;
+            height: auto;
+        }
+        .right-section {
+            flex: 1;
+            padding: 5%;
+            position: relative;
+        }
+        form {
+            margin-top: 40px;
         }
         h1 {
             text-align: center;
@@ -81,8 +102,6 @@
             color: white;
             text-decoration: none;
         }
-
-        /* تنسيق الزر الخاص بتسجيل الدخول والتسجيل */
         .switch-buttons {
             display: flex;
             justify-content: center;
@@ -113,33 +132,54 @@
             transform: translateY(-50%);
             cursor: pointer;
         }
-
-      
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-section {
+                display: none; /* Hide the left section */
+            }
+            .right-section {
+                text-align: center; /* Center align the right section */
+            }
+        }
     </style>
 </head>
 <body>
-    <form id="loginForm">
-        <h1>Welcome to Lorem!</h1>
-        <div class="switch-buttons">
-            <button class="active" id="loginBtnSwitch">Login</button>
-            <button><a href="./register.html" target="_blank">register</a></button>
+    <div class="container">
+        <div class="left-section">
+            <img src="./image.png" alt="Login Image">
         </div>
-        <div>
-            <label for="username">Username: </label>
-            <input type="text" id="username">
-            <span class="error" id="usernameError"></span>
+        <div class="right-section">
+            <form id="loginForm">
+                <h1>Welcome to Lorem!</h1>
+                <div class="switch-buttons">
+                    <button class="active" id="loginBtnSwitch">Login</button>
+                    <button><a href="./registerdes.html">Register</a></button>
+                </div>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username">
+                    <span class="error" id="usernameError"></span>
+                </div>
+                <div class="password-container">
+                    <label for="password">Password:</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password">
+                        <span class="toggle-password" id="togglePassword">👁️</span>
+                    </div>
+                    <span class="error" id="passwordError"></span>
+                </div>
+                <div>
+                    <button id="loginBtn" disabled>Login</button>
+                </div>
+                <p id="successMessage"></p>
+            </form>
         </div>
-        <div class="password-container">
-            <label for="password">Password: </label>
-            <input type="password" id="password">
-            <span class="toggle-password" id="togglePassword">👁️</span>
-            <span class="error" id="passwordError"></span>
-        </div>
-        <div>
-            <button id="loginBtn" disabled>Login</button>
-        </div>
-        <p id="successMessage"></p>
-    </form>
+    </div>
 
     <script>
         const usernameInput = document.getElementById('username');
@@ -150,7 +190,6 @@
         const passwordError = document.getElementById('passwordError');
         const togglePassword = document.getElementById('togglePassword');
 
-        // تبديل عرض كلمة المرور
         togglePassword.addEventListener('click', function () {
             const type = passwordInput.type === 'password' ? 'text' : 'password';
             passwordInput.type = type;
@@ -175,15 +214,12 @@
             const username = usernameInput.value;
             const password = passwordInput.value;
 
-            // الحصول على قائمة المستخدمين من localStorage
             const users = JSON.parse(localStorage.getItem('users')) || [];
             const existingUser = users.find(user => user.username === username && user.password === password);
 
             if (existingUser) {
                 successMessage.textContent = 'Login successful!';
                 successMessage.style.color = 'green';
-
-                // هنا يمكن إضافة توجيه المستخدم إلى صفحة أخرى
             } else {
                 usernameError.textContent = 'Invalid username or password!';
                 passwordError.textContent = '';

@@ -31,7 +31,7 @@
   color: var(--text-dark);
 }
 
-.section__header::after {
+.section__header::after, .workout_header::after {
   position: absolute;
   content: "";
   left: 0;
@@ -831,6 +831,125 @@ nav {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  /* User workout  */
+  .Workout-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 50px; 
+  }
+  
+  .workout_header {
+    position: relative;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .workout_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .workout_grid {
+    display: grid;
+    gap: 3rem;
+  }
+  
+  /* Adjust Workout Cards */
+  .workout_card {
+    
+    gap: 1rem; /* Space between the text, video, and content */
+    
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  .workout-title {
+    text-align: center;
+    font-size: 24px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Add space below the title */
+  }
+  .workout-date
+  {
+    text-align: center;
+  }
+  
+  .workout_heading_text {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-dark); /* Ensure it's aligned with your theme */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 1rem; /* Add space below the heading */
+  }
+  
+  .workout_vedio {
+    justify-self: center;
+  }
+  
+  .workout_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start; /* Center-align the text inside the content */
+  }
+  .workout_content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .workout_content p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Optional: Adjust text icon size */
+  .workout_content span {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+ 
+  /* Carousel Buttons */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+   
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    background-color: #ccc;
+
+   
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color: rgb(53, 125, 75); /* Change hover effect */
+  }
+  /* End Of User workout  */
+
   .trainer__grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -846,6 +965,7 @@ nav {
   .price__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
 
   .footer__container {
     grid-template-columns: repeat(5, 1fr);

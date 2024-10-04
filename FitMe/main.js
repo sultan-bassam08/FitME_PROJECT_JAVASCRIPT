@@ -75,4 +75,8 @@ const swiper = new Swiper(".swiper", {
   loop: true,
   slidesPerView: "auto",
   spaceBetween: 20,
+  autoplay: {
+    delay: 3000, // Delay between slides in milliseconds (3 seconds in this case)
+    disableOnInteraction: false, // Keeps autoplay running even after user interaction
+  },
 }); 

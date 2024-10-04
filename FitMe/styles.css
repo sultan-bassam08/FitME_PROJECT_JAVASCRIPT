@@ -725,3 +725,77 @@ nav {
   }
 }
 
+
+.contact__container {
+  padding: 2rem 0;
+}
+
+.contact__header {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact__description {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form__group {
+  margin-bottom: 1rem;
+}
+
+.form__group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.form__group input,
+.form__group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form__group textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+
+
+#contact .section__header{
+  text-align: center;
+}
+
+#contact .section__header::after{
+  content: "";
+  display: block;
+  width: 60px; 
+  height: 4px;
+  background-color:var(--primary-color); 
+  margin: 10px auto 0; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+

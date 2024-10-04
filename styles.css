@@ -874,7 +874,11 @@ nav {
   .workout-title {
     text-align: center;
     font-size: 24px; /* Adjust size as needed */
-    margin-bottom: 20px; /* Add space below the title */
+    margin-bottom: 10px; /* Add space below the title */
+  }
+  .workout-date
+  {
+    text-align: center;
   }
   
   .workout_heading_text {

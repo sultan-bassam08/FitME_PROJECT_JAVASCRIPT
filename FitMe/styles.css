@@ -187,6 +187,27 @@ nav {
   gap: 2rem;
 }
 
+.about {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .about::after {
+    content: "";
+    display: block;
+    width: 60px; 
+    height: 4px;
+    background-color:var(--primary-color); 
+    margin: 10px auto 0; 
+    position: absolute;
+    left: 54%;
+    transform: translateX(-50%);
+  }
+  
+
+
 .about__image {
   position: relative;
   isolation: isolate;

@@ -22,7 +22,7 @@
   padding: 5rem 1rem;
 }
 
-.section__header {
+.shape {
   position: relative;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -31,7 +31,7 @@
   color: var(--text-dark);
 }
 
-.section__header::after {
+.shape::after {
   position: absolute;
   content: "";
   left: 0;
@@ -57,6 +57,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: 0.3s;
+  border: 1.5px solid transparent;
 }
 
 .btn:hover {
@@ -115,6 +116,8 @@ nav {
 
 .nav__logo img {
   max-width: 40px;
+  margin-right: -7px; 
+
 }
 
 .nav__links {
@@ -236,7 +239,6 @@ nav {
 
 
 .section__header {
-  text-align: center;
   font-size: 2.8em;
   margin-bottom: 20px;
   color: #333;
@@ -251,7 +253,7 @@ nav {
   background-color:var(--primary-color); 
   margin: 10px auto 0; 
   position: absolute;
-  left: 50%;
+  left: 5%;
   transform: translateX(-50%);
 }
 
@@ -260,7 +262,7 @@ nav {
   text-align: center;
   font-size: 1.2em;
   color: #777;
-  margin-bottom: 50px; /* زيادة المسافة بين الفقرة والكاردز */
+  margin-bottom: 50px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -271,7 +273,7 @@ nav {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  margin-top: 20px; /* مسافة إضافية بين الكاردز والفقرة */
+  margin-top: 20px; 
 }
 
 .class__card {
@@ -328,6 +330,17 @@ nav {
   font-size: 1.1em;
   color: #f1f1f1;
 }
+.class__content :is(.section__header, .section__description) {
+  width: fit-content;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.class__container .section__header::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 
 
@@ -451,6 +464,24 @@ nav {
   margin-bottom: 1rem;
 }
 
+.clients{
+  text-align: center;
+}
+
+.clients::after {
+  content: "";
+  display: block;
+  width: 60px; 
+  height: 4px;
+  background-color:var(--primary-color); 
+  margin: 10px auto 0; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
 .swiper {
   margin-top: 2rem;
   padding-bottom: 2rem;
@@ -462,6 +493,7 @@ nav {
   padding-inline: 1rem;
   padding-top: 4rem;
 }
+
 
 .client__card {
   position: relative;
@@ -524,11 +556,13 @@ nav {
 
 .footer__logo img {
   max-width: 40px;
+  margin-right: -7px; 
 }
 
 .footer__col p {
   margin-bottom: 2rem;
   color: var(--text-light);
+
 }
 
 .footer__socials {
@@ -690,4 +724,78 @@ nav {
     padding: 2rem;
   }
 }
+
+
+.contact__container {
+  padding: 2rem 0;
+}
+
+.contact__header {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact__description {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form__group {
+  margin-bottom: 1rem;
+}
+
+.form__group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.form__group input,
+.form__group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form__group textarea {
+  height: 110px;
+  resize: vertical;
+}
+
+
+
+#contact .section__header{
+  text-align: center;
+}
+
+#contact .section__header::after{
+  content: "";
+  display: block;
+  width: 60px; 
+  height: 4px;
+  background-color:var(--primary-color); 
+  margin: 10px auto 0; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
 

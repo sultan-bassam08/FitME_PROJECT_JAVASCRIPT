@@ -1,0 +1,80 @@
+{
+    "workout_schedule": {
+      "day_1": {
+        "title": "Full Body Workout",
+        "exercises": [
+          {
+            "name": "Push-ups",
+            "reps": 10,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=JyCG_5l3XLk"
+          },
+          {
+            "name": "Squats",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=MVMNk0HiTMg"
+          },
+          {
+            "name": "Plank",
+            "duration": "30 seconds",
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=EPiXN2bkLoQ"
+          },
+          {
+            "name": "Lunges",
+            "reps": 12,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=tTej-ax9XiA"
+          }
+        ]
+      },
+      "day_2": {
+        "title": "Cardio & Core",
+        "exercises": [
+          {
+            "name": "Jump Rope",
+            "duration": "5 minutes",
+            "sets": 1,
+            "youtube_url": "https://www.youtube.com/watch?v=iI1F14fYS68"
+          },
+          {
+            "name": "Mountain Climbers",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=ruQ4ZwncXBg"
+          },
+          {
+            "name": "Russian Twists",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=7XUglHKRyMo"
+          }
+        ]
+      },
+     "day_3": {
+        "title": "legs",
+        "exercises": [
+          {
+            "name": "Jump Rope",
+            "duration": "5 minutes",
+            "sets": 1,
+            "youtube_url": "https://www.youtube.com/watch?v=iI1F14fYS68"
+          },
+          {
+            "name": "Squats",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=MVMNk0HiTMg"
+          },
+          {
+           "name": "Lunges",
+            "reps": 12,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/watch?v=tTej-ax9XiA"
+          }
+        ]
+      }
+    }
+  }
+  

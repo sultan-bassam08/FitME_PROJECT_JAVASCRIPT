@@ -351,9 +351,10 @@
     <section class="section__container contact__container" id="contact">
       <h2 class="section__header">Contact Us</h2>
       <p class="section__description">
-        At Fit Me, we're here to help you achieve your fitness goals! Whether you have questions about our programs, need assistance, or just want to share your feedback, feel free to reach out.      </p>
+        At Fit Me, we're here to help you achieve your fitness goals! Whether you have questions about our programs, need assistance, or just want to share your feedback, feel free to reach out.
+      </p>
       <div class="contact__form">
-        <form action="#" method="POST">
+        <form id="contactForm" action="#" method="POST">
           <div class="form__group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required />
@@ -367,11 +368,12 @@
             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
           </div>
           <button type="submit" class="btn">Send Message</button>
-          
+          <!-- Success message (hidden by default) -->
+          <div id="successMessage" style="display: none;">Successfully sent your message!</div>
         </form>
       </div>
     </section>
-    
+        
    
 
     <footer class="footer">

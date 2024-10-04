@@ -798,4 +798,10 @@ nav {
 }
 
 
-
+#successMessage {
+  margin-top: 20px;
+  display: none;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}

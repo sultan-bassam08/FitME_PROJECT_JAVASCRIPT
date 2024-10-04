@@ -109,7 +109,7 @@
         .toggle-password {
             position: absolute;
             right: 10px;
-            top: 70%;
+            top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
         }
@@ -182,6 +182,7 @@
             if (existingUser) {
                 successMessage.textContent = 'Login successful!';
                 successMessage.style.color = 'green';
+
                 // هنا يمكن إضافة توجيه المستخدم إلى صفحة أخرى
             } else {
                 usernameError.textContent = 'Invalid username or password!';

@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="/styles.css" />
     <title>FIT ME</title>
 
+        <link rel="icon" href="/FitMe/assets/logo.png">
+
     <style>
       .notification {
         position: relative;
@@ -86,19 +88,19 @@
         </div>
         <ul class="nav__links" id="nav-links">
           <li class="link"><a href="#home">Home</a></li>
-          <li class="link"><a href="#about">About</a></li>
+          <li class="link"><a href="#home">Workout</a></li>
+          <li class="link"><a href="#home">Nutrition</a></li>
           <li class="link"><a href="#class">Classes</a></li>
           <li class="link"><a href="#trainer">Trainers</a></li>
-          <li class="link"><a href="#price">Pricing</a></li>
+    
           <li class="link"><a href="#price">Contact Us</a></li>
           <li class="link profile-container">
             <a href="#notifications" class="notification">
               <span class="material-icons">notifications</span>
-              <span class="badge">3</span> <!-- Example for unread notifications -->
+              <span class="badge">3</span> 
             </a>
             <a href="#profile" class="profile-circle">
-              <img src="/FitMe/assets/user-index-hero.svg
-              " alt="Profile" />
+              <img src="/FitMe/assets/client-3.jpg" alt="Profile" />
             </a>
           </li>
         </ul>
@@ -273,7 +275,7 @@
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="/FitMe/main.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
@@ -300,6 +302,29 @@
           icon.classList.add('completed'); // Change color to green
         }
       }
+
+      function toggleCarouselControls() {
+  const prevControl = document.querySelector(".carousel-control-prev");
+  const nextControl = document.querySelector(".carousel-control-next");
+
+  if (window.innerWidth <= 768) {
+    prevControl.style.display = "none";
+    nextControl.style.display = "none";
+  } else {
+    prevControl.style.display = "block";
+    nextControl.style.display = "block";
+  }
+}
+
+// Run the function when the page loads
+document.addEventListener("DOMContentLoaded", toggleCarouselControls);
+
+// Run the function on window resize
+window.addEventListener("resize", toggleCarouselControls);
+
+
+
+
     </script>
   </body>
 </html>

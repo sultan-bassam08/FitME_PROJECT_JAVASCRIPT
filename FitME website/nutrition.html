@@ -133,7 +133,7 @@
             <p class="diet-date">10/4/2024</p>
             <div class="diet_card">
               <div class="diet_img">
-                  <img src="/FitMe/assets/recipes_2.jpg">
+                  <img src="/FitMe/assets/recipes_2.jpg" width="300px">
               </div>
               <div class="diet_content">
                 <span class="material-icons">restaurant</span>
@@ -145,7 +145,7 @@
 
             <div class="diet_card">
                 <div class="diet_img">
-                    <img src="/FitMe/assets/recipes_2.jpg">
+                    <img src="/FitMe/assets/recipes_2.jpg" width="300px">
                 </div>
                 <div class="diet_content">
                   <span class="material-icons">restaurant</span>
@@ -172,7 +172,7 @@
             <p class="diet-date">11/4/2024</p>
             <div class="diet_card">
               <div class="diet_img">
-                <img src="/FitMe/assets/recipes_3.jpg">
+                <img src="/FitMe/assets/recipes_3.jpg" width="300px">
               </div>
               <div class="diet_content">
                 <span class="material-icons">restaurant_menu</span>
@@ -185,7 +185,7 @@
             <div class="popup" id="popup2">
               <div class="popup-content">
                 <span class="close-btn" onclick="closePopup('popup2')">&times;</span>
-                <img src="https://via.placeholder.com/500x300" alt="Grilled Chicken Breast" />
+                <img src="/FitMe/assets/recipes_1.jpg" width="300px" alt="Grilled Chicken Breast" />
                 <h3>Grilled Chicken Breast Recipe</h3>
                 <p>Ingredients: Chicken Breast, Olive Oil, Garlic, Paprika, Lemon Juice, Salt, Pepper.</p>
                 <p>Instructions: Marinate chicken breast in olive oil, garlic, paprika, and lemon juice, then grill until cooked through.</p>
@@ -222,6 +222,7 @@
         </div>
       
         <!-- Carousel controls -->
+         <div class="control">
         <button class="carousel-control-prev" type="button" data-target="#workoutCarousel" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -230,7 +231,7 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </button>
-      </div>
+      </div></div>
 
 
     <footer class="footer">
@@ -282,7 +283,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="/FitMe/main.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
@@ -300,6 +301,26 @@ function closePopup(popupId) {
   document.getElementById(popupId).style.display = "none";
   document.body.classList.remove("hide-carousel-btns"); // Remove class to show buttons again
 }
+
+function toggleCarouselControls() {
+  const prevControl = document.querySelector(".carousel-control-prev");
+  const nextControl = document.querySelector(".carousel-control-next");
+
+  if (window.innerWidth <= 768) {
+    prevControl.style.display = "none";
+    nextControl.style.display = "none";
+  } else {
+    prevControl.style.display = "block";
+    nextControl.style.display = "block";
+  }
+}
+
+// Run the function when the page loads
+document.addEventListener("DOMContentLoaded", toggleCarouselControls);
+
+// Run the function on window resize
+window.addEventListener("resize", toggleCarouselControls);
+
       </script>
   </body>
 </html>

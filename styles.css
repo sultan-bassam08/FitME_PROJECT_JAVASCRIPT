@@ -790,6 +790,7 @@ nav {
     gap: 2rem;
   }
 
+
   .nav__header {
     padding: 0;
     background-color: transparent;
@@ -859,19 +860,15 @@ nav {
   }
   
   /* Adjust Workout Cards */
-  .workout_card, .diet_card {
-    
-    gap: 1rem; /* Space between the text, video, and content */
-   
-    
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
-  }
+  .workout_card,
+.diet_card {
+  gap: 1rem; /* Space between the text, video, and content */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
   .workout-title, .diet-title {
     text-align: center;
     font-size: 24px; /* Adjust size as needed */
@@ -930,10 +927,10 @@ nav {
   
  
   /* Carousel Buttons */
-  .carousel-control-prev-icon,
+  /* .carousel-control-prev-icon,
   .carousel-control-next-icon {
    
-  }
+  } */
   
   .carousel-control-prev,
   .carousel-control-next {
@@ -948,11 +945,21 @@ nav {
 
    
   }
+  /* @media (max-width: 768px) {
+    .carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  display: none !important;
+{
+      display: none !important;
+    }
+  } */
   
-  .carousel-control-prev:hover,
-  .carousel-control-next:hover {
-    background-color: rgb(53, 125, 75); /* Change hover effect */
+  /* Media Query for Small Screens (if you want additional rules at this size) */
+  @media (max-width: 480px) {
+    /* Any additional styles for smaller screens can go here */
   }
+
+  
   /* End Of User workout  */
 
 /* User diet  */
@@ -1081,3 +1088,24 @@ nav {
     padding: 2rem;
   }
 }
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    /* display: none; Hide carousel buttons on smaller screens */
+  }
+
+  .btn-show-more {
+    width: 100%; /background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: 1.5px solid rgb(18, 90, 246);
+  }
+}
+

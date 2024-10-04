@@ -55,12 +55,7 @@
         justify-content: center;
       }
 
-      /* Align the icons on the top right of the nav bar */
-      .nav__links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+     
 
       .profile-container a {
         text-decoration: none;
@@ -71,18 +66,19 @@
         .completed {
   color: rgb(255, 255, 255) !important; /* Force the color to change */
   background-color: lightseagreen!important;
+  
 }
 
       
     </style>
+    <link rel="stylesheet" href="../FitMe/styles.css">
   </head>
   <body>
     <header class="header">
       <nav>
         <div class="nav__header">
           <div class="nav__logo">
-            <p>FIT</p>
-            <a href="#"><img src="/FitMe/assets/logo.png" alt="logo" />E</a>
+            <a href="#">FIT<img src="../FitMe/assets/logo.png" alt="logo" />E</a>
           </div>
           <div class="nav__menu__btn" id="menu-btn">
             <span><i class="ri-menu-line"></i></span>
@@ -90,26 +86,26 @@
         </div>
         <ul class="nav__links" id="nav-links">
           <li class="link"><a href="#home">Home</a></li>
-          <li class="link"><a href="#about">Workout</a></li>
-          <li class="link"><a href="#class">Nutrition</a></li>
+          <li class="link"><a href="#about">About</a></li>
+          <li class="link"><a href="#class">Classes</a></li>
           <li class="link"><a href="#trainer">Trainers</a></li>
-          <li class="link"><a href="#price">Progress</a></li>
+          <li class="link"><a href="#price">Pricing</a></li>
           <li class="link"><a href="#price">Contact Us</a></li>
-          <!-- Notification icon and profile circle -->
           <li class="link profile-container">
             <a href="#notifications" class="notification">
               <span class="material-icons">notifications</span>
-              <span class="badge">3</span>
+              <span class="badge">3</span> <!-- Example for unread notifications -->
             </a>
             <a href="#profile" class="profile-circle">
-              <img src="/FitMe/assets/profile.jfif" alt="Profile" />
+              <img src="/FitMe/assets/user-index-hero.svg
+              " alt="Profile" />
             </a>
           </li>
         </ul>
       </nav>
       <div class="section__container header__container" id="home">
         <div class="header__image">
-          <img src="/FitMe/assets/user-index-hero.svg" alt="header" />
+          <img src="../FitMe/assets/user-index-hero.svg" alt="header" />
         </div>
         <div class="header__content">
           <h4>Rand</h4>
@@ -230,53 +226,51 @@
 </div>
 
 
-    <footer class="footer">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="footer__logo">
-            <a href="#"><img src="assets/logo.png" alt="logo" />Power</a>
-          </div>
-          <p>
-            Take the first step towards a healthier, stronger you with our
-            unbeatable pricing plans. Let's sweat, achieve, and conquer together!
-          </p>
-          <div class="footer__socials">
-            <a href="#"><i class="ri-facebook-fill"></i></a>
-            <a href="#"><i class="ri-instagram-line"></i></a>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <div class="footer__links">
-            <a href="#">Business</a>
-            <a href="#">Franchise</a>
-            <a href="#">Partnership</a>
-            <a href="#">Network</a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h4>About Us</h4>
-          <div class="footer__links">
-            <a href="#">Blogs</a>
-            <a href="#">Security</a>
-            <a href="#">Careers</a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h4>Contact</h4>
-          <div class="footer__links">
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">BMI Calculator</a>
-          </div>
-        </div>
+<footer class="footer">
+  <div class="section__container footer__container">
+    <div class="footer__col">
+      <div class="footer__logo">
+        <a href="#">FIT<img src="../FitMe/assets/logo.png" alt="logo" /> E</a>
       </div>
-      <div class="footer__bar">
-        Copyright © 2023 Web Design Mastery. All rights reserved.
+      <p>
+        Take the first step towards a healthier, stronger you with our
+        unbeatable pricing plans. Let's sweat, achieve, and conquer
+        together!
+      </p>
+      <div class="footer__socials">
+        <a href="#"><i class="ri-facebook-fill"></i></a>
+        <a href="#"><i class="ri-instagram-line"></i></a>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
       </div>
-    </footer>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <div class="footer__links">
+        <a href="#">Business</a>
+        <a href="#">Franchise</a>
+        <a href="#">Partnership</a>
+        <a href="#">Network</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>About Us</h4>
+      <div class="footer__links">
+        <a href="#">Blogs</a>
+        <a href="#">Security</a>
+        <a href="#">Careers</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <div class="footer__links">
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">BMI Calculator</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="main.js"></script>

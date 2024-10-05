@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <title>FIT ME</title>
+    
+    <link rel="stylesheet" href="css/user.css">
+        <link rel="icon" href="assets/logo.png">
+
+    <style>
+        .notification {
+  position: relative;
+  margin-right: 20px;
+  /* font-size: 1.8rem; Adjust size of the notification icon */
+  color: #333;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
+
+/* Styles for the profile circle */
+.profile-circle img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Align the icons on the top right of the nav bar */
+
+.profile-container a {
+  text-decoration: none;
+  margin-left: 15px;
+}
+    </style>
+        
+
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="#">FIT<img src="assets/logo.png" alt="logo" />E</a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <span><i class="ri-menu-line"></i></span>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="#home">Workout</a></li>
+          <li class="link"><a href="#home">Nutrition</a></li>
+          <li class="link"><a href="#price">Contact Us</a></li>
+          <li class="link profile-container">
+            <a href="#notifications" class="notification">
+              <span class="material-icons">notifications</span>
+              <span class="badge">3</span> 
+            </a>
+            <a href="#profile" class="profile-circle">
+              <img src="assets/client-3.jpg" alt="Profile" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__image">
+          <img src="assets/Fitness tracker-bro.svg" alt="header" />
+        </div>
+        <div class="header__content">
+          <h4><h1 id="userGreeting">Hello!</h1></h4>
+          <!-- <h1 class="section__header">Welcome back!</h1> -->
+          <p>
+            You're just one step closer to achieving your fitness goals!
+          </p>
+          <div class="header__btn">
+            <a href="workout.html"> <button class="btn-user">Start Today’s Workout</button></a>
+           <a href="nutrition.html">
+             <button class="btn-user2">Log a meal</button>
+            </a>
+           
+          </div>
+        </div>
+      </div>
+    </header>
+
+   
+
+
+
+   
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#home">FIT<img src="assets/logo.png" alt="logo" /> E</a>
+          </div>
+          <p>
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans.<br> Let's sweat, achieve, and conquer
+            together!
+          </p>
+          <div class="footer__socials">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer__col">
+          <div class="footer__links">
+            <a href="#contact">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const usernameData = JSON.parse(localStorage.getItem("users"));
+        const userfromsession = JSON.parse(sessionStorage.getItem("userData"));
+        const users = usernameData;
+        const userGreeting = document.querySelector("#userGreeting");
+        if (true) {
+          userGreeting.textContent = `Hello ${userfromsession.username}!`;
+         
+
+        } else {
+          userGreeting.textContent = `Hello`;
+        }})
+
+        
+    </script>
+  </body>
+</html>

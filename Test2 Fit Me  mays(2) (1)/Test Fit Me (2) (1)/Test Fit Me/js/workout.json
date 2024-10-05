@@ -1,0 +1,80 @@
+{
+    "workout_schedule": {
+      "day_1": {
+        "title": "Full Body Workout",
+        "exercises": [
+          {
+            "name": "Push-ups",
+            "reps": 10,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/JyCG_5l3XLk?si=7f9KiHYM45nFm40d"
+          },
+          {
+            "name": "Squats",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/MVMNk0HiTMg?si=p1TMuhgB5AZEesya"
+          },
+          {
+            "name": "Plank",
+            "duration": "30 seconds",
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/EPiXN2bkLoQ?si=xH0e6BuK8lkHkDUD"
+          },
+          {
+            "name": "Lunges",
+            "reps": 12,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/tQNktxPkSeE?si=3LMzYFHyZ5j82rtE"
+          }
+        ]
+      },
+      "day_2": {
+        "title": "Cardio & Core",
+        "exercises": [
+          {
+            "name": "Jump Rope",
+            "duration": "5 minutes",
+            "sets": 1,
+            "youtube_url": "https://www.youtube.com/embed/iI1F14fYS68?si=3VkVLNG8qR-bxmN8"
+          },
+          {
+            "name": "Mountain Climbers",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/ruQ4ZwncXBg?si=GDARaYDI553hyNeM"
+          },
+          {
+            "name": "Russian Twists",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/7XUglHKRyMo?si=YkER6_Bj-8ZovMuV"
+          }
+        ]
+      },
+     "day_3": {
+        "title": "legs",
+        "exercises": [
+          {
+            "name": "Jump Rope",
+            "duration": "5 minutes",
+            "sets": 1,
+            "youtube_url": "https://www.youtube.com/embed/iI1F14fYS68?si=gsTfAYk6J1kAZbID"
+          },
+          {
+            "name": "Squats",
+            "reps": 15,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/MVMNk0HiTMg?si=3OkGgMbaP3V-Nqbv"
+          },
+          {
+           "name": "Lunges",
+            "reps": 12,
+            "sets": 3,
+            "youtube_url": "https://www.youtube.com/embed/tQNktxPkSeE?si=3LMzYFHyZ5j82rtE"
+          }
+        ]
+      }
+    }
+  }
+  

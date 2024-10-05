@@ -55,5 +55,45 @@ function displayStoredData() {
   console.log("Stored Contact Data:", storedData);
 }
 
+<<<<<<< HEAD
+// about container
+ScrollReveal().reveal(".about__image img", {
+  ...scrollRevealOption,
+  origin: "left",
+});
+
+ScrollReveal().reveal(".about__content .section__header", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+
+ScrollReveal().reveal(".about__content .section__description", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+
+ScrollReveal().reveal(".about__card", {
+  ...scrollRevealOption,
+  delay: 1500,
+  interval: 500,
+});
+
+// price container
+ScrollReveal().reveal(".price__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+const swiper = new Swiper(".swiper", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3000, // Delay between slides in milliseconds (3 seconds in this case)
+    disableOnInteraction: false, // Keeps autoplay running even after user interaction
+  },
+}); 
+=======
 // يمكنك استدعاء الوظيفة عند تحميل الصفحة لعرض البيانات المخزنة
 window.onload = displayStoredData;
+>>>>>>> d7e38c91263f9e2b39e3e07119c005f2e937b221

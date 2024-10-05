@@ -872,7 +872,16 @@ nav {
     grid-template-columns: repeat(2, 1fr);
     
   }
+<<<<<<< HEAD
+  .workout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .workout-title {
+=======
   .workout-title, .diet-title {
+>>>>>>> d7e38c91263f9e2b39e3e07119c005f2e937b221
     text-align: center;
     font-size: 24px; /* Adjust size as needed */
     margin-bottom: 10px; /* Add space below the title */

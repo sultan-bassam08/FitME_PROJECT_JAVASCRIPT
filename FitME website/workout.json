@@ -7,25 +7,25 @@
             "name": "Push-ups",
             "reps": 10,
             "sets": 3,
-            "youtube_url": "https://www.youtube.com/watch?v=JyCG_5l3XLk"
+            "youtube_url": "https://www.youtube.com/embed/JyCG_5l3XLk?si=7f9KiHYM45nFm40d"
           },
           {
             "name": "Squats",
             "reps": 15,
             "sets": 3,
-            "youtube_url": "https://www.youtube.com/watch?v=MVMNk0HiTMg"
+            "youtube_url": "https://www.youtube.com/embed/MVMNk0HiTMg?si=p1TMuhgB5AZEesya"
           },
           {
             "name": "Plank",
             "duration": "30 seconds",
             "sets": 3,
-            "youtube_url": "https://www.youtube.com/watch?v=EPiXN2bkLoQ"
+            "youtube_url": "https://www.youtube.com/embed/EPiXN2bkLoQ?si=xH0e6BuK8lkHkDUD"
           },
           {
             "name": "Lunges",
             "reps": 12,
             "sets": 3,
-            "youtube_url": "https://www.youtube.com/watch?v=tTej-ax9XiA"
+            "youtube_url": "https://www.youtube.com/embed/tTej-ax9XiA?si=3hT-QdJ7oKbk2LAU"
           }
         ]
       },

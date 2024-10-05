@@ -118,7 +118,9 @@
         </div>
       </div>
     </header>
+ <div id="workout-schedule">
 
+ </div>
   <!-- Carousel section for workout cards -->
 <div id="workoutCarousel" class="carousel slide" data-ride="carousel">
   <!-- Workout headings and arrows -->
@@ -133,84 +135,9 @@
   </div>
 
   <!-- Carousel inner to hold workout cards -->
-  <div class="carousel-inner">
-    <!-- First carousel item (active) -->
-    <div class="carousel-item active">
-      <h2 class="workout-title">Full Body Workout</h2> 
-      <p class="workout-date">10/4/2024</p>
-      <div class="workout_card">
-        <div class="workout_vedio">
-          <iframe
-            id="youtube-video"
-            width="400"
-            height="200"
-            src="https://www.youtube.com/embed/cmple9fw65w?enablejsapi=1"
-            title="YouTube video player"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="workout_content">
-          <span class="material-symbols-outlined" id="icon">not_started</span>
-          <h4>Warm Up</h4>
-          <p>
-            Prepare your body with dynamic movements that improve circulation and flexibility, reducing the risk of injury while boosting performance.
-          </p>
-        </div>
-      </div>
-    </div>
+  <div class="carousel-inner" id="workout-carousel-inner">
+
   
-    <!-- Second carousel item -->
-    <div class="carousel-item">
-      <h2 class="workout-title">Cardio & Core</h2>
-      p class="workout-date">10/4/2024</p>
-      <div class="workout_card">
-        <div class="workout_vedio">
-          <iframe
-            id="youtube-video"
-            width="400"
-            height="200"
-            src="https://www.youtube.com/embed/cmple9fw65w?enablejsapi=1"
-            title="YouTube video player"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="workout_content">
-          <span class="material-symbols-outlined" id="icon">not_started</span>
-          <h4>Strength</h4>
-          <p>
-            Build strength and endurance with targeted exercises to help tone and sculpt your body.
-          </p>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Third carousel item -->
-    <div class="carousel-item">
-      <h2 class="workout-title">legs</h2>
-      <p class="workout-date">10/4/2024</p>
-      <div class="workout_card">
-        <div class="workout_vedio">
-          <iframe
-            id="youtube-video"
-            width="400"
-            height="200"
-            src="https://www.youtube.com/embed/cmple9fw65w?enablejsapi=1"
-            title="YouTube video player"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="workout_content">
-          <span class="material-symbols-outlined" id="icon">not_started</span>
-          <h4>Cooldown</h4>
-          <p>
-            End your workout with a cool-down session to help muscles recover and reduce soreness.
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
   
 
@@ -273,11 +200,11 @@
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./workout.js"></script>
     
     <script>
       var player;

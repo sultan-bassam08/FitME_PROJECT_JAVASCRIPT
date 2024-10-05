@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+   
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="assets/loginReg-logo.png" alt="Login Image">
+        </div>
+        <div class="right-section">
+            <form id="loginForm">
+                <h1>Welcome to <a>Fit Me</a></h1>
+                <div class="switch-buttons">
+                    <button class="active" id="loginBtnSwitch">Login</button>
+                    <button><a href="register.html">Register</a></button>
+                </div>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username">
+                    <span class="error" id="usernameError"></span>
+                </div>
+                <div class="password-container">
+                    <label for="password">Password:</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password">
+                        <span class="toggle-password" id="togglePassword">👁️</span>
+                    </div>
+                    <span class="error" id="passwordError"></span>
+                </div>
+                <div>
+                   <button id="loginBtn" disabled>Login</button>
+                </div>
+                <p id="successMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginBtn = document.getElementById('loginBtn');
+        const successMessage = document.getElementById('successMessage');
+        const usernameError = document.getElementById('usernameError');
+        const passwordError = document.getElementById('passwordError');
+        const togglePassword = document.getElementById('togglePassword');
+
+        //--------------------------------------
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        });
+
+        function validateInput() {
+            const isUsernameValid = usernameInput.value.trim() !== '';
+            const isPasswordValid = passwordInput.value.trim() !== '';
+
+            usernameError.textContent = isUsernameValid ? '' : 'Username is required.';
+            passwordError.textContent = isPasswordValid ? '' : 'Password is required.';
+
+            loginBtn.disabled = !(isUsernameValid && isPasswordValid);
+        }
+
+        usernameInput.addEventListener('input', validateInput);
+        passwordInput.addEventListener('input', validateInput);
+
+        loginBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const existingUser = users.find(user => user.username === username && user.password === password);
+
+                if (existingUser) {
+        successMessage.textContent = 'Login successful!';
+        successMessage.style.color = 'green';
+        
+        // Store the username in session storage
+        sessionStorage.setItem('userData', JSON.stringify({ username: existingUser.username }));
+        
+        // Redirect to user index page
+        window.location.href = "user-index.html";
+    } else {
+        usernameError.textContent = 'Invalid username or password!';
+        passwordError.textContent = '';
+    }
+
+            });
+    </script>
+</body>
+</html>

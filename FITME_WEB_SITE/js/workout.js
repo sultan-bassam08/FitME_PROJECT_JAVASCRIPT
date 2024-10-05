@@ -1,5 +1,5 @@
 
-fetch('http://127.0.0.1:5500/FitME_PROJECT_JAVASCRIPT-main/FITME_WEB_SITE/js/workout.json')
+fetch('http://127.0.0.1:5502/FITME_WEB_SITE/js/workout.json')
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');

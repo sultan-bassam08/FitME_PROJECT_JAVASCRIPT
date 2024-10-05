@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <link
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+    <link rel="stylesheet" href="css/user.css" />
+    <title>FIT ME</title>
+
+    <style>
+      .notification {
+        position: relative;
+        margin-right: 20px;
+        color: #333;
+      }
+
+      .notification .badge {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        padding: 3px 6px;
+        border-radius: 50%;
+        font-size: 0.7rem;
+      }
+
+      /* Styles for the profile circle */
+      .profile-circle img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ccc;
+      }
+
+      .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Align the icons on the top right of the nav bar */
+      .nav__links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .profile-container a {
+        text-decoration: none;
+        margin-left: 15px;
+      }
+
+      
+        .completed {
+  color: rgb(255, 255, 255) !important; /* Force the color to change */
+  background-color: lightseagreen!important;
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <p>FIT</p>
+            <a href="#"><img src="assets/logo.png" alt="logo" />E</a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <span><i class="ri-menu-line"></i></span>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="#about">Workout</a></li>
+          <li class="link"><a href="#class">Nutrition</a></li>
+          <li class="link"><a href="#trainer">Trainers</a></li>
+          <li class="link"><a href="#price">Progress</a></li>
+          <li class="link"><a href="#price">Contact Us</a></li>
+          <!-- Notification icon and profile circle -->
+          <li class="link profile-container">
+            <a href="#notifications" class="notification">
+              <span class="material-icons">notifications</span>
+              <span class="badge">3</span>
+            </a>
+            <a href="#profile" class="profile-circle">
+              <img src="assets/profile.jfif" alt="Profile" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__image">
+          <img src="assets/Diet-amico.svg" alt="header" />
+        </div>
+        <div class="header__content">
+          <h4>Rand</h4>
+          <h1 class="section__header">Welcome back!</h1>
+          <p>You're just one step closer to achieving your fitness goals!</p>
+          <div class="header__btn">
+            <button class="btn-user">Start Today’s Workout</button>
+            <button class="btn-user2">Log a Workout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+ 
+    <div id="workoutCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel inner to hold diet cards -->
+        <div class="carousel-inner">
+          <!-- First carousel item (active) -->
+          <div class="carousel-item active">
+            <h2 class="diet-title">Full Body Workout</h2> 
+            <p class="diet-date">10/4/2024</p>
+            <div class="diet_card">
+              <div class="diet_img">
+                  <img src="assets/recipes_2.jpg" width="300px">
+              </div>
+              <div class="diet_content">
+                <span class="material-icons">restaurant</span>
+                <h4>Healthy Avocado Salad</h4>
+                <p>This delicious avocado salad is packed with nutrients and easy to prepare. A perfect meal to fuel your body.</p>
+                <button class="btn-show-more" onclick="openPopup('popup1')">Show More</button>
+              </div>
+            </div>
+
+            <div class="diet_card">
+                <div class="diet_img">
+                    <img src="assets/recipes_2.jpg" width="300px">
+                </div>
+                <div class="diet_content">
+                  <span class="material-icons">restaurant</span>
+                  <h4>Healthy Avocado Salad</h4>
+                  <p>This delicious avocado salad is packed with nutrients and easy to prepare. A perfect meal to fuel your body.</p>
+                  <button class="btn-show-more" onclick="openPopup('popup1')">Show More</button>
+                </div>
+              </div>
+            <!-- First Popup -->
+            <div class="popup" id="popup1">
+              <div class="popup-content">
+                <span class="close-btn" onclick="closePopup('popup1')">&times;</span>
+                <img src="assets/recipes_2.jpg" alt="Avocado Salad" width="300px"  />
+                <h3>Healthy Avocado Salad Recipe</h3>
+                <p>Ingredients: Avocado, Cherry Tomatoes, Lettuce, Olive Oil, Lemon Juice, Salt, Pepper.</p>
+                <p>Instructions: Toss all ingredients in a bowl, drizzle with olive oil and lemon juice, and season to taste.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Second carousel item -->
+          <div class="carousel-item">
+            <h2 class="diet-title">Lean Protein Meal</h2>
+            <p class="diet-date">11/4/2024</p>
+            <div class="diet_card">
+              <div class="diet_img">
+                <img src="assets/recipes_2.jpg" width="300px">
+              </div>
+              <div class="diet_content">
+                <span class="material-icons">restaurant_menu</span>
+                <h4>Grilled Chicken Breast</h4>
+                <p>A high-protein, low-fat meal that's perfect for muscle recovery after an intense workout.</p>
+                <button class="btn-show-more" onclick="openPopup('popup2')">Show More</button>
+              </div>
+            </div>
+            <!-- Second Popup -->
+            <div class="popup" id="popup2">
+              <div class="popup-content">
+                <span class="close-btn" onclick="closePopup('popup2')">&times;</span>
+                <img src="assets/recipes_2.jpg"  alt="Grilled Chicken Breast" />
+                <h3>Grilled Chicken Breast Recipe</h3>
+                <p>Ingredients: Chicken Breast, Olive Oil, Garlic, Paprika, Lemon Juice, Salt, Pepper.</p>
+                <p>Instructions: Marinate chicken breast in olive oil, garlic, paprika, and lemon juice, then grill until cooked through.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Third carousel item -->
+          <div class="carousel-item">
+            <h2 class="diet-title">Post-Workout Snack</h2>
+            <p class="diet-date">12/4/2024</p>
+            <div class="diet_card">
+              <div class="diet_img">
+                <img src="assets/recipes_2.jpg">
+              </div>
+              <div class="diet_content">
+                <span class="material-icons">local_cafe</span>
+                <h4>Peanut Butter Smoothie</h4>
+                <p>A quick and nutritious smoothie that provides energy and helps with muscle recovery.</p>
+                <button class="btn-show-more" onclick="openPopup('popup3')">Show More</button>
+              </div>
+            </div>
+            <!-- Third Popup -->
+            <div class="popup" id="popup3">
+              <div class="popup-content">
+                <span class="close-btn" onclick="closePopup('popup3')">&times;</span>
+                <img src="assets/recipes_2.jpg " alt="Peanut Butter Smoothie" />
+                <h3>Peanut Butter Smoothie Recipe</h3>
+                <p>Ingredients: Peanut Butter, Banana, Almond Milk, Honey, Protein Powder (optional).</p>
+                <p>Instructions: Blend all ingredients until smooth. Serve chilled.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Carousel controls -->
+         <div class="control">
+        <button class="carousel-control-prev" type="button" data-target="#workoutCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#workoutCarousel" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div></div>
+
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#"><img src="assets/logo.png" alt="logo" />Power</a>
+          </div>
+          <p>
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+          </p>
+          <div class="footer__socials">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <div class="footer__links">
+            <a href="#">Business</a>
+            <a href="#">Franchise</a>
+            <a href="#">Partnership</a>
+            <a href="#">Network</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <div class="footer__links">
+            <a href="#">Blogs</a>
+            <a href="#">Security</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <div class="footer__links">
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">BMI Calculator</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2023 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+       // Function to open the popup and hide carousel buttons
+function openPopup(popupId) {
+  document.getElementById(popupId).style.display = "flex";
+  document.body.classList.add("hide-carousel-btns"); // Add class to hide buttons
+}
+
+// Function to close the popup and show carousel buttons
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = "none";
+  document.body.classList.remove("hide-carousel-btns"); // Remove class to show buttons again
+}
+
+function toggleCarouselControls() {
+  const prevControl = document.querySelector(".carousel-control-prev");
+  const nextControl = document.querySelector(".carousel-control-next");
+
+  if (window.innerWidth <= 768) {
+    prevControl.style.display = "none";
+    nextControl.style.display = "none";
+  } else {
+    prevControl.style.display = "block";
+    nextControl.style.display = "block";
+  }
+}
+
+// Run the function when the page loads
+document.addEventListener("DOMContentLoaded", toggleCarouselControls);
+
+// Run the function on window resize
+window.addEventListener("resize", toggleCarouselControls);
+
+      </script>
+  </body>
+</html>

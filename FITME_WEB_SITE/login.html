@@ -13,6 +13,7 @@
         <div class="left-section">
             <img src="assets/loginReg-logo.png" alt="Login Image">
         </div>
+
         <div class="right-section">
             <form id="loginForm">
                 <h1>Welcome to <a>Fit Me</a></h1>
@@ -83,6 +84,7 @@
             if (existingUser) {
                 successMessage.textContent = 'Login successful!';
                 successMessage.style.color = 'green';
+                sessionStorage.setItem('userData', JSON.stringify({ username: existingUser.username })); // Store username
                 window.location.href = "user-index.html"
             } else {
                 usernameError.textContent = 'Invalid username or password!';

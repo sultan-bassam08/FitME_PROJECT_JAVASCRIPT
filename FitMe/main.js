@@ -55,7 +55,6 @@ function displayStoredData() {
   console.log("Stored Contact Data:", storedData);
 }
 
-<<<<<<< HEAD
 // about container
 ScrollReveal().reveal(".about__image img", {
   ...scrollRevealOption,
@@ -93,7 +92,3 @@ const swiper = new Swiper(".swiper", {
     disableOnInteraction: false, // Keeps autoplay running even after user interaction
   },
 }); 
-=======
-// يمكنك استدعاء الوظيفة عند تحميل الصفحة لعرض البيانات المخزنة
-window.onload = displayStoredData;
->>>>>>> d7e38c91263f9e2b39e3e07119c005f2e937b221

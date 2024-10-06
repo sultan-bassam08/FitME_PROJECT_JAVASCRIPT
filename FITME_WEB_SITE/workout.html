@@ -20,6 +20,7 @@
 />
 
     <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>FIT ME</title>
 
         <link rel="icon" href="assets/logo.png">
@@ -75,6 +76,31 @@
   background-color: lightseagreen!important;
   
 }
+.profile-container {
+  position: relative; /* Make the container relative */
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it absolutely */
+  right: 0; /* Align to the right */
+  background-color: white; /* Background color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  z-index: 10; /* Ensure it is above other elements */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Spacing inside the dropdown */
+}
+
+.dropdown-menu a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */
+  padding: 8px; /* Spacing for each option */
+  display: block; /* Make the links block elements */
+}
+
+.dropdown-menu a:hover {
+  background-color: lightgray; /* Change background on hover */
+}
 
       
     </style>
@@ -102,9 +128,12 @@
               <span class="material-icons">notifications</span>
               <span class="badge">3</span> 
             </a>
-            <a href="#profile" class="profile-circle">
+            <div class="profile-circle" id="profileCircle">
               <img src="assets/client-3.jpg" alt="Profile" />
-            </a>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a href="login.html" class="logout-option">Logout</a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -188,6 +217,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/workout.js"></script>
+    <script src="js/main.js"></script>
     
     <script>
       var player;
@@ -230,6 +260,22 @@ document.addEventListener("DOMContentLoaded", toggleCarouselControls);
 // Run the function on window resize
 window.addEventListener("resize", toggleCarouselControls);
 
+
+
+//log out expand
+document.getElementById('profileCircle').addEventListener('click', function() {
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Optional: Close the dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const profileCircle = document.getElementById('profileCircle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    if (!profileCircle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
 
 
 

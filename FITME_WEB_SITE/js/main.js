@@ -124,3 +124,5 @@ const swiper = new Swiper(".swiper", {
 // يمكنك استدعاء الوظيفة عند تحميل الصفحة لعرض البيانات المخزنة
 // window.onload = displayStoredData;
 // >>>>>>> d7e38c91263f9e2b39e3e07119c005f2e937b221
+
+

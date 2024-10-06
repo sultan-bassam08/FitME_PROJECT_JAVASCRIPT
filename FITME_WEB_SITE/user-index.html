@@ -7,62 +7,94 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
     <title>FIT ME</title>
-    
     <link rel="stylesheet" href="css/user.css">
-        <link rel="icon" href="assets/logo.png">
+    <link rel="icon" href="assets/logo.png">
 
     <style>
-        .notification {
-  position: relative;
-  margin-right: 20px;
-  /* font-size: 1.8rem; Adjust size of the notification icon */
-  color: #333;
-}
+      .nav__links li a , .nav__logo a {
+        text-decoration: none;
+      }
 
-.notification .badge {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  background-color: red;
-  color: white;
-  padding: 3px 6px;
-  border-radius: 50%;
-  font-size: 0.7rem;
-}
 
-/* Styles for the profile circle */
-.profile-circle img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ccc;
-}
+      .notification {
+        position: relative;
+        margin-right: 20px;
+        color: #333;
+      }
 
+      .notification .badge {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        padding: 3px 6px;
+        border-radius: 50%;
+        font-size: 0.7rem;
+      }
+
+      /* Styles for the profile circle */
+      .profile-circle img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ccc;
+      }
+
+      .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+     
+
+      .profile-container a {
+        text-decoration: none;
+        margin-left: 15px;
+      }
+
+      
+        .completed {
+  color: rgb(255, 255, 255) !important; /* Force the color to change */
+  background-color: lightseagreen!important;
+  
+}
 .profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative; /* Make the container relative */
 }
 
-/* Align the icons on the top right of the nav bar */
-
-.profile-container a {
-  text-decoration: none;
-  margin-left: 15px;
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it absolutely */
+  right: 0; /* Align to the right */
+  background-color: white; /* Background color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  z-index: 10; /* Ensure it is above other elements */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Spacing inside the dropdown */
 }
+
+.dropdown-menu a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */
+  padding: 8px; /* Spacing for each option */
+  display: block; /* Make the links block elements */
+}
+
+.dropdown-menu a:hover {
+  background-color: lightgray; /* Change background on hover */
+}
+
+      
     </style>
-        
-
   </head>
   <body>
     <header class="header">
@@ -85,9 +117,12 @@
               <span class="material-icons">notifications</span>
               <span class="badge">3</span> 
             </a>
-            <a href="#profile" class="profile-circle">
+            <div class="profile-circle" id="profileCircle">
               <img src="assets/client-3.jpg" alt="Profile" />
-            </a>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a href="login.html" class="logout-option">Logout</a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -97,26 +132,18 @@
         </div>
         <div class="header__content">
           <h4><h1 id="userGreeting">Hello!</h1></h4>
-          <!-- <h1 class="section__header">Welcome back!</h1> -->
           <p>
             You're just one step closer to achieving your fitness goals!
           </p>
           <div class="header__btn">
             <a href="workout.html"> <button class="btn-user">Start Today’s Workout</button></a>
-           <a href="nutrition.html">
-             <button class="btn-user2">Log a meal</button>
+            <a href="nutrition.html">
+              <button class="btn-user2">Log a meal</button>
             </a>
-           
           </div>
         </div>
       </div>
     </header>
-
-   
-
-
-
-   
 
     <footer class="footer">
       <div class="section__container footer__container">
@@ -135,10 +162,9 @@
             <a href="#"><i class="ri-twitter-fill"></i></a>
           </div>
         </div>
-        
-        
       </div>
     </footer>
+    
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
@@ -148,15 +174,27 @@
         const userfromsession = JSON.parse(sessionStorage.getItem("userData"));
         const users = usernameData;
         const userGreeting = document.querySelector("#userGreeting");
-        if (true) {
+        if (userfromsession) {
           userGreeting.textContent = `Hello ${userfromsession.username}!`;
-         
-
         } else {
           userGreeting.textContent = `Hello`;
-        }})
+        }
+      });
 
-        
+      // Log out expand
+      document.getElementById('profileCircle').addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent the event from bubbling up
+          const dropdownMenu = document.getElementById('dropdownMenu');
+          dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Close the dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+          const dropdownMenu = document.getElementById('dropdownMenu');
+          if (!event.target.closest('.profile-container')) {
+              dropdownMenu.style.display = 'none';
+          }
+      });
     </script>
   </body>
 </html>

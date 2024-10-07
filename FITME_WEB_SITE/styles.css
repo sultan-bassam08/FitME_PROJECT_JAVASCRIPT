@@ -290,10 +290,11 @@ nav {
 }
 
 .class__grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  /* flex-wrap: wrap; */
   gap: 30px;
-  justify-content: center;
+  /* justify-content: center; */
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 20px; 
 }
 

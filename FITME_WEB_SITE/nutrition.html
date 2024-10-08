@@ -253,6 +253,150 @@ a:hover {
   background-color: lightgray; /* Change background on hover */
 }
 
+
+/* الشاشات الصغيرة مثل الهواتف */
+@media (max-width: 767px) {
+    .nav__logo a {
+        font-size: 1.5rem; /* تصغير حجم الخط */
+    }
+
+    .header__image img {
+        width: 100%; /* تأكد من أن الصورة تأخذ عرض الشاشة بالكامل */
+    }
+
+    .header__content h1 {
+        font-size: 2rem; /* تصغير حجم العنوان */
+    }
+
+    .header__content p {
+        font-size: 1rem; /* تصغير حجم الفقرة */
+    }
+
+    .header__btn button {
+        padding: 8px 12px; /* تقليل الحشوة داخل الزر */
+    }
+
+    .diet_card {
+        flex-direction: column; /* اجعل البطاقة تتجه عموديًا */
+        text-align: center; /* محاذاة النص إلى المنتصف */
+    }
+
+    .diet_img img {
+        width: 100%; /* تأكد من أن الصورة تأخذ العرض الكامل */
+        height: auto; /* اجعل الارتفاع تلقائيًا للحفاظ على نسبة الصورة */
+        margin: 0 auto; /* محاذاة الصورة إلى المنتصف */
+    }
+
+    .diet_content {
+        padding-left: 0;
+    }
+
+    .btn-show-more {
+        width: 100%; /* جعل الزر يأخذ عرض البطاقة بالكامل */
+    }
+
+    #diet-cards-container {
+        padding: 10px; /* تقليل الحشوة */
+    }
+
+    .footer {
+        text-align: center; /* محاذاة المحتوى إلى المنتصف */
+    }
+}
+
+/* الشاشات المتوسطة مثل التابلت */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header__content h1 {
+        font-size: 2.5rem; /* تكبير العنوان قليلاً */
+    }
+
+    .diet_card {
+        flex-direction: row; /* تأكد من أن البطاقة تتجه أفقيًا */
+    }
+
+    .diet_img img {
+        width: 150px; /* تقليل حجم الصورة */
+        height: 150px; /* تقليل الارتفاع */
+    }
+
+    .btn-show-more {
+        width: auto; /* السماح للزر بالحجم التلقائي */
+    }
+
+    .profile-circle img {
+        width: 40px; /* تعديل حجم صورة الملف الشخصي */
+        height: 40px;
+    }
+
+    .footer {
+        text-align: left; /* محاذاة الفوتر إلى اليسار */
+    }
+}
+
+/* الشاشات الكبيرة مثل الحواسيب */
+@media (min-width: 1025px) {
+    .header__content h1 {
+        font-size: 3rem; /* تكبير العنوان */
+    }
+
+    .diet_img img {
+        width: 200px; /* الحجم الافتراضي للصورة */
+        height: 200px;
+    }
+
+    .btn-show-more {
+        padding: 10px 20px; /* زيادة حجم الزر قليلاً */
+    }
+
+    .footer__socials i {
+        font-size: 1.5rem; /* تكبير الأيقونات الاجتماعية */
+    }
+}
+@media (max-width: 768px) {
+    .diet_card {
+        flex-basis: 100%; /* الكارد ستأخذ 100% من العرض */
+        flex-direction: column; /* ترتيب الكارد بشكل عمودي */
+    }
+
+    .diet_img {
+        margin-bottom: 15px; /* إضافة مسافة بين الصورة والمحتوى */
+    }
+
+    .diet_img img {
+        width: 100%; /* جعل الصورة بعرض الكارد بالكامل */
+        height: auto; /* ارتفاع تلقائي للصورة */
+    }
+
+    .diet_content {
+        padding-left: 0; /* إزالة الهوامش الجانبية عند تصغير الشاشة */
+    }
+}
+
+/* استجابة لشاشات أصغر من الهواتف */
+@media (max-width: 480px) {
+    .diet_card {
+        padding: 15px;
+    }
+
+    .diet_img img {
+        width: 100%; /* عرض الصورة 100% من عرض الكارد */
+        height: auto; /* ضبط ارتفاع الصورة تلقائيًا */
+        object-fit: cover; /* الحفاظ على النسبة مع تغطية المساحة */
+
+    }
+
+    .diet_content h4 {
+        font-size: 1.2rem; /* تقليل حجم العناوين */
+    }
+
+    .diet_content p {
+        font-size: 0.9rem; /* تقليل حجم النصوص */
+    }
+
+    .btn-show-more {
+        padding: 8px 12px; /* تصغير الزر قليلاً */
+    }
+}
       
     </style>
 

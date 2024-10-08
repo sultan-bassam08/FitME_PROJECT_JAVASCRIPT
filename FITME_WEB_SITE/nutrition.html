@@ -74,12 +74,13 @@
 
 .diet_card {
     display: flex;
-    margin: 20px 0;
+    flex-direction: column;
+  margin: 20px 0;
     border: 1px solid #ccc;
     border-radius: 10px; /* جعل الزوايا مدورة أكثر */
     padding: 20px; /* زيادة الحشوة */
     background-color: var(--white); /* تغيير الخلفية إلى اللون الأبيض */
-    flex-direction: column;
+    /* flex-direction: column; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
     transition: transform 0.3s, box-shadow 0.3s; /* إضافة تأثير عند التحويم */
 }
@@ -88,12 +89,20 @@
     transform: translateY(-5px); /* رفع البطاقة قليلاً عند التحويم */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التحويم */
 }
+.diet_img {
+  flex: 1; /* تخصيص مساحة للصورة */
+  margin-right: 20px; /* إضافة مسافة بين الصورة والمحتوى */
+    /* width: 100vw; تأكد من أن الحاوية تأخذ عرض البطاقة بالكامل */
+ } 
+
 
 .diet_img img {
-    max-width: 100%;
+   width: 100%;
+   /* height: auto; */
     border-radius: 10px; /* جعل الزوايا مدورة */
     transition: transform 0.3s; /* إضافة تأثير عند التحويم */
     border: 2px solid var(--primary-color); /* إضافة حد للصورة */
+    /* object-fit: cover; */
 }
 
 .diet_img img:hover {
@@ -101,9 +110,17 @@
 }
 
 .diet_content {
-    flex: 2;
-    padding-left: 20px;
-    position: relative; /* لتسهيل وضع العناصر داخلها */
+    flex: 2; /*بتاخد ضعف المساحة */
+    /* padding-left: 20px;
+    position: relative; لتسهيل وضع العناصر داخلها */
+    display: flex;
+    /* flex-direction: column; /* تجعل المحتوى يتراكم بشكل عمودي */
+    /* justify-content: space-between; توزع العناصر بين أعلى وأسفل الحاوية */ 
+}
+
+
+.diet_content p {
+    margin-bottom: 20px; /* إضافة مسافة بين النص والزر */
 }
 
 .btn-show-more {
@@ -113,8 +130,17 @@
     color: var(--white);
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 5px; /* جعل الزوايا مدورة */
-    transition: background-color 0.3s; /* إضافة تأثير عند التحويم */
+    transition: background-color 0.3s; /*إضافة تأثير عند التحويم*/
+
+    border-radius: 5px; /* جعل الزوايا مدورة
+    /* background-color: var(--primary-color);
+    border: none;
+    color: var(--white);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    align-self: flex-start; اجعل الزر يأتي أسفل النص */
 }
 
 .btn-show-more:hover {
@@ -317,7 +343,7 @@ a:hover {
                     const card = document.createElement('div');
                     card.classList.add('diet_card', 'card');
                     card.innerHTML = `
-                        <h2 class="diet-title">${item.name}</h2>
+                        
                         <div class="diet_img">
                             <img src="${item.img}" alt="${item.name}">
                         </div>

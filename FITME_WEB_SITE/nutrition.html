@@ -74,16 +74,24 @@
 
 .diet_card {
     display: flex;
-    flex-direction: column;
-  margin: 20px 0;
+    flex-direction: row;
+    margin: 20px 0;
     border: 1px solid #ccc;
     border-radius: 10px; /* جعل الزوايا مدورة أكثر */
     padding: 20px; /* زيادة الحشوة */
     background-color: var(--white); /* تغيير الخلفية إلى اللون الأبيض */
-    /* flex-direction: column; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
     transition: transform 0.3s, box-shadow 0.3s; /* إضافة تأثير عند التحويم */
+    
 }
+#diet-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+     align-items: center;  
+   gap: 20px; 
+    padding: 20px; 
+} 
 
 .diet_card:hover {
     transform: translateY(-5px); /* رفع البطاقة قليلاً عند التحويم */
@@ -92,17 +100,17 @@
 .diet_img {
   flex: 1; /* تخصيص مساحة للصورة */
   margin-right: 20px; /* إضافة مسافة بين الصورة والمحتوى */
-    /* width: 100vw; تأكد من أن الحاوية تأخذ عرض البطاقة بالكامل */
+    /* width: 50%;  */
  } 
 
 
 .diet_img img {
-   width: 100%;
-   /* height: auto; */
+   width: 200px;
+   height: 200px; 
     border-radius: 10px; /* جعل الزوايا مدورة */
     transition: transform 0.3s; /* إضافة تأثير عند التحويم */
     border: 2px solid var(--primary-color); /* إضافة حد للصورة */
-    /* object-fit: cover; */
+    object-fit: cover;
 }
 
 .diet_img img:hover {
@@ -111,11 +119,11 @@
 
 .diet_content {
     flex: 2; /*بتاخد ضعف المساحة */
-    /* padding-left: 20px;
-    position: relative; لتسهيل وضع العناصر داخلها */
+    padding-left: 20px;
+    position: relative; 
     display: flex;
-    /* flex-direction: column; /* تجعل المحتوى يتراكم بشكل عمودي */
-    /* justify-content: space-between; توزع العناصر بين أعلى وأسفل الحاوية */ 
+    flex-direction: column; 
+    justify-content: space-between; 
 }
 
 
@@ -133,14 +141,14 @@
     transition: background-color 0.3s; /*إضافة تأثير عند التحويم*/
 
     border-radius: 5px; /* جعل الزوايا مدورة
-    /* background-color: var(--primary-color);
+    background-color: var(--primary-color);
     border: none;
     color: var(--white);
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
-    align-self: flex-start; اجعل الزر يأتي أسفل النص */
+    align-self: flex-start; اجعل الزر يأتي أسفل النص
 }
 
 .btn-show-more:hover {

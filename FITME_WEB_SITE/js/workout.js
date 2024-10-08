@@ -65,3 +65,17 @@ fetch('http://127.0.0.1:5502/FITME_WEB_SITE/js/workout.json')
 .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
 });
+
+//------------------------------
+
+document.getElementById("menu-btn").addEventListener("click", function() {
+    const navLinks = document.getElementById("nav-links");
+    const isTranslated = navLinks.style.transform === "translateY(0%)";
+    navLinks.style.transform = isTranslated ? "translateY(-100%)" : "translateY(0%)";
+  });
+  
+  document.querySelectorAll("#nav-links li").forEach(function(listItem) {
+    listItem.addEventListener("click", function() {
+        document.getElementById("nav-links").style.transform = "translateY(-100%)";
+    });
+  });

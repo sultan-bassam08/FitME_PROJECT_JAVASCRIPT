@@ -101,7 +101,7 @@
       <nav>
         <div class="nav__header">
           <div class="nav__logo">
-            <a href="./index.html">FIT<img src="assets/logo.png" alt="logo" />E</a>
+            <a href="../index.html">FIT<img src="assets/logo.png" alt="logo" >E</a>
           </div>
           <div class="nav__menu__btn" id="menu-btn">
             <span><i class="ri-menu-line"></i></span>
@@ -149,7 +149,7 @@
       <div class="section__container footer__container">
         <div class="footer__col">
           <div class="footer__logo">
-            <a href="#home">FIT<img src="assets/logo.png" alt="logo" /> E</a>
+            <a href="../index.html">FIT<img src="assets/logo.png" alt="logo"> E</a>
           </div>
           <p>
             Take the first step towards a healthier, stronger you with our
@@ -195,6 +195,20 @@
               dropdownMenu.style.display = 'none';
           }
       });
+
+      //----------------------------------------
+
+      document.getElementById("menu-btn").addEventListener("click", function() {
+  const navLinks = document.getElementById("nav-links");
+  const isTranslated = navLinks.style.transform === "translateY(0%)";
+  navLinks.style.transform = isTranslated ? "translateY(-100%)" : "translateY(0%)";
+});
+
+document.querySelectorAll("#nav-links li").forEach(function(listItem) {
+  listItem.addEventListener("click", function() {
+      document.getElementById("nav-links").style.transform = "translateY(-100%)";
+  });
+});
     </script>
   </body>
 </html>

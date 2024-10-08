@@ -126,3 +126,14 @@ const swiper = new Swiper(".swiper", {
 // >>>>>>> d7e38c91263f9e2b39e3e07119c005f2e937b221
 
 
+document.getElementById("menu-btn").addEventListener("click", function() {
+  const navLinks = document.getElementById("nav-links");
+  const isTranslated = navLinks.style.transform === "translateY(0%)";
+  navLinks.style.transform = isTranslated ? "translateY(-100%)" : "translateY(0%)";
+});
+
+document.querySelectorAll("#nav-links li").forEach(function(listItem) {
+  listItem.addEventListener("click", function() {
+      document.getElementById("nav-links").style.transform = "translateY(-100%)";
+  });
+});
